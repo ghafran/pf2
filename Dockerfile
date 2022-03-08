@@ -34,17 +34,11 @@ RUN pip install dgl-cu113 -f https://data.dgl.ai/wheels/repo.html
 RUN pip install torch -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
 # RUN pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
 # RUN pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
-# RUN pip install torch-geometric
-# RUN pip install torchvision
+RUN pip install torch-geometric
+RUN pip install torchvision
 RUN pip install ipython
 RUN pip install jax
 RUN pip install jaxlib
 RUN pip install py3Dmol
 RUN pip install matplotlib-venn
 RUN pip install pydot
-RUN pip install cartopy
-RUN pip install tensorflow
-
-# fix library
-RUN export LD_CUDA_PATH=/usr/local/cuda-11.6/targets/x86_64-linux/lib;/usr/local/lib/python3.8/dist-packages/torch/lib
-RUN export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${LD_CUDA_PATH}
