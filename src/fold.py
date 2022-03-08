@@ -10,10 +10,8 @@ with io.capture_output() as captured:
   from parsers import parse_a3m
 
 import colabfold as cf
-import py3Dmol
 import subprocess
 import numpy as np
-import matplotlib.pyplot as plt
 
 def get_bfactor(pdb_filename):
   bfac = []
