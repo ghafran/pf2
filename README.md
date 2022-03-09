@@ -50,13 +50,3 @@ sudo docker run -it --rm --gpus all --name pf2test \
 ```
 scp -r -i ~/.ssh/at.pem 'ubuntu@35.173.1.112:/home/ubuntu/pf2/output/*' './output/'
 ```
-
-
-# test on local mac 
-```
-docker buildx build --platform linux/amd64 -t pf2 .
-docker run -it --rm --platform linux/amd64 --name pf2test \
-    -e "NAME=tsp1" \
-    -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
-    pf2 bash
-```
