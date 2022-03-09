@@ -14,7 +14,7 @@ nvidia-smi
 nvidia-smi --list-gpus | wc -l
 ```
 
-## install docker and nvidia docker tookkit on host
+## install docker and nvidia docker toolkit on host
 ```
 curl https://get.docker.com | sh && sudo systemctl --now enable docker
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
