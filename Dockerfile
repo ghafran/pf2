@@ -1,5 +1,5 @@
 # FROM ubuntu:20.04
-FROM nvidia/cuda:11.6.0-base-ubuntu20.04
+FROM nvidia/cuda:11.4.0-base-ubuntu20.04
 
 # copy source code
 COPY src /src
@@ -8,7 +8,7 @@ WORKDIR /src
 # install packages
 RUN apt-get update
 RUN apt-get install -y python3 pip wget git unzip nano
-RUN apt-get install -y libcublas-11-6 libcusparse-dev-11-6 libcurand-11-6
+RUN apt-get install -y libcublas-11-4 libcusparse-dev-11-4 libcurand-11-4
 
 # extra functionality
 RUN wget https://raw.githubusercontent.com/sokrypton/ColabFold/main/beta/colabfold.py
