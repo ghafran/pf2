@@ -1,6 +1,6 @@
 
 docker buildx build --platform linux/amd64 -t pf2 .
-docker run -it --rm --name pf2test \
+docker run -it --rm --platform linux/amd64 --name pf2test \
     -e "NAME=tsp1" \
     -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
     pf2 bash

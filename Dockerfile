@@ -31,14 +31,17 @@ RUN unzip -qqo scwrl4.zip
 # install libraries
 RUN pip install pip_search
 RUN pip install dgl-cu113 -f https://data.dgl.ai/wheels/repo.html
-RUN pip install torch -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
-# RUN pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
-# RUN pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
+RUN pip install torch==1.10.0+cu111 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+RUN pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
+RUN pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
+# RUN pip install torchvision -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
 RUN pip install torch-geometric
-RUN pip install torchvision
 RUN pip install ipython
 RUN pip install jax
 RUN pip install jaxlib
 RUN pip install py3Dmol
 RUN pip install matplotlib-venn
 RUN pip install pydot
+
+RUN chmod +x env.sh
+

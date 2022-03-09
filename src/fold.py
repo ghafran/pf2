@@ -4,6 +4,9 @@ import os
 import sys
 from IPython.utils import io
 
+LIBPATH = os.getenv('LD_LIBRARY_PATH')
+os.environ["LD_LIBRARY_PATH"] = LIBPATH + ":/usr/local/cuda-11.6/targets/x86_64-linux/lib:/usr/local/lib/python3.8/dist-packages/torch/lib"
+
 with io.capture_output() as captured:
   sys.path.append('/src/RoseTTAFold/network')
   import predict_e2e
