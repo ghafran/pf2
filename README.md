@@ -43,7 +43,7 @@ sudo docker run -it --rm --gpus all --name pf2test \
      -v "$(pwd)/output:/output" \
     -e "NAME=tsp1" \
     -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
-    pf2 bash
+    pf2 /bin/sh -c "/src/run.sh"
 ```
 
 # Download
