@@ -10,9 +10,6 @@ RUN apt-get update
 RUN apt-get install -y python3 pip wget git unzip nano
 RUN apt-get install -y libcublas-11-4 libcusparse-dev-11-4 libcurand-11-4
 
-# extra functionality
-RUN wget https://raw.githubusercontent.com/sokrypton/ColabFold/main/beta/colabfold.py
-
 # download model
 RUN git clone https://github.com/RosettaCommons/RoseTTAFold.git
 RUN wget https://raw.githubusercontent.com/sokrypton/ColabFold/main/beta/RoseTTAFold__network__Refine_module.patch
@@ -34,7 +31,6 @@ RUN pip install dgl-cu113 -f https://data.dgl.ai/wheels/repo.html
 RUN pip install torch==1.10.0+cu111 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 RUN pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
 RUN pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
-# RUN pip install torchvision -f https://pytorch-geometric.com/whl/torch-1.10.0+cu113.html
 RUN pip install torch-geometric
 RUN pip install ipython
 RUN pip install jax
@@ -42,6 +38,10 @@ RUN pip install jaxlib
 RUN pip install py3Dmol
 RUN pip install matplotlib-venn
 RUN pip install pydot
+RUN pip install ipywidgets
 
 RUN chmod +x env.sh
+RUN chmod +x copy.sh
 
+# run fold prediction
+ENTRYPOINT ["/src/env.sh", "python3 run.py", "/src/copy.sh"]
