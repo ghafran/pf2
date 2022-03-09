@@ -38,15 +38,12 @@ At this, point we should push the built image to an image respository
 ## run fold prediction
 This must run on a host with nvidia gpu and drivers
 ```
-cd ~
-git clone https://github.com/ghafran/pf2
 cd ~/pf2
-sudo docker build -t pf2 .
 sudo docker run -it --rm --gpus all --name pf2test \
      -v "$(pwd)/output:/output" \
     -e "NAME=tsp1" \
     -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
-    pf2
+    pf2 bash
 ```
 
 # Download

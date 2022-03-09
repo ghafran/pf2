@@ -42,6 +42,4 @@ RUN pip install ipywidgets
 
 RUN chmod +x env.sh
 RUN chmod +x copy.sh
-
-# run fold prediction
-ENTRYPOINT ["/src/env.sh", "python3 run.py", "/src/copy.sh"]
+RUN chmod +x run.sh
