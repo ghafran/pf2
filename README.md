@@ -22,3 +22,17 @@ docker run -it --rm --name pf2test \
     -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
     ubuntu:20.04 bash
 docker rm pf2test
+
+
+
+
+ssh -i ~/.ssh/at.pem ubuntu@35.173.1.112
+sudo apt update
+sudo apt install -y docker.io
+git clone https://github.com/ghafran/pf2
+cd pf2
+sudo docker build -t pf2 .
+docker run -it --rm --gpus all --name pf2test \
+    -e "NAME=tsp1" \
+    -e "SEQUENCE=MAAPTPADKSMMAAVPEWTITNLKRVCNAGNTSCTWTFGVDTHLATATSCTYVVKANANASQASGGPVTCGPYTITSSWSGQFGPNNGFTTFAVTDFSKKLIVWPAYTDVQVQAGKVVSPNQSYAPANLPLEHHHHHH" \
+    pf2 bash
