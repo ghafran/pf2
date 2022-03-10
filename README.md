@@ -1,5 +1,5 @@
 
-# Run on g4dn.xlarge instance (Ubuntu Server 20.04 LTS (HVM), SSD Volume Type)
+# Run on g4dn.xlarge instance (Ubuntu Server 20.04 LTS (HVM), SSD Volume Type), 120GB
 
 ## install nvidia drivers on host
 ```
