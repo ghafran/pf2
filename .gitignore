@@ -1,3 +1,4 @@
 *.pdb
 *.a3m
 *.npz
+.DS_Store
