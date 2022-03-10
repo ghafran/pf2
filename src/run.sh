@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# ensure gpu available
 nvidia-smi
-nvidia-smi --list-gpus | wc -l
+
+# setup library links
 /src/env.sh
+
+# run fold
 python3 run.py
+
+# copy output to host
 /src/copy.sh
